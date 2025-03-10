@@ -19,11 +19,10 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.2.0",
-<<<<<<< HEAD
-    "yarn": "^1.22.22"
-=======
+
+    "yarn": "^1.22.22",
+
     "react-toastify": "^11.0.5"
->>>>>>> 3d03d06a2bee11c28846e24520052785ec794686
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",

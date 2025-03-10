@@ -1,5 +1,7 @@
 /* Tổng thể */
 .a {
+  margin-top: 100px;
+  margin-left: 250px;
   display: flex;
   flex-direction: row;
   gap: 20px;
