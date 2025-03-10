@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
+import "./style.css";
 
 export const Home = () => {
-  return (
-    <div></div>
-  );
+  return <div className="style">home</div>;
 };
