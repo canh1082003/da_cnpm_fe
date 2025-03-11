@@ -32,9 +32,11 @@
       }
     }
     .container {
+      z-index: 100;
       width: 84%;
       margin-left: 16%;
       .header {
+        background-color: #fff;
         position: fixed;
         height: 100px;
         width: 84%;

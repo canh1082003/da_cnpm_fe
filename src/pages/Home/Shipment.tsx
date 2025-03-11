@@ -84,28 +84,28 @@ const Shipment = () => {
           <h3>📍 Tracking result</h3>
          <div className="ko">
          <div className="ok">
-            <p>5:50 PM </p>
+            <span>5:50 PM </span>
             <ul className="tracking-timeline">
               <h2>Đơn hàng kho phân loại HN SOC</h2>
               <li>Kiện hàng đã đến HN SOC</li>
             </ul>
           </div>
           <div className="ok">
-            <p>5:50 PM</p>
+            <span>5:50 PM</span>
             <ul className="tracking-timeline">
               <h2>Đơn hàng kho phân loại HN SOC</h2>
               <li>Kiện hàng đã đến HN SOC</li>
             </ul>
           </div>
           <div className="ok">
-            <p>5:50 PM</p>
+            <span>5:50 PM</span>
             <ul className="tracking-timeline">
               <h2>Đơn hàng kho phân loại HN SOC</h2>
               <li>Kiện hàng đã đến HN SOC</li>
             </ul>
           </div>
           <div className="ok">
-            <p>5:50 PM</p>
+            <span>5:50 PM</span>
             <ul className="tracking-timeline">
               <h2>Đơn hàng kho phân loại HN SOC</h2>
               <li>Kiện hàng đã đến HN SOC</li>

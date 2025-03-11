@@ -7,7 +7,8 @@
   gap: 20px;
   padding: 20px;
   font-size: 20px;
-  font-family: Arial, sans-serif;
+  font-family: "Host Grotesk", serif;
+
 }
 
 /* Hồ sơ shipper */
@@ -114,10 +115,10 @@ table th, table td {
 }
 
 .tracking-timeline {
+  /* margin-left: 10px; */
   list-style: none;
   padding: 0;
   position: relative;
-  margin-left: 20px;
   h2{
     font-size: 20px;
     margin-left: 30px;
@@ -130,7 +131,9 @@ table th, table td {
 }
 .ok{
   display: flex;
-
+  span{
+    width: 100px;
+  }
 }
 
 .tracking-timeline::before {
@@ -153,7 +156,7 @@ table th, table td {
   content: '';
   position: absolute;
   left: 3px;
-  top: -26px;
+  top: -53px;
   width: 15px;
   height: 15px;
   background: #d1d5db;
