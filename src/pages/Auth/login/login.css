@@ -1,0 +1,66 @@
+.login {
+  display: flex;
+  margin-top: 120px;
+  .img_login {
+    width: 50%;
+    .img {
+      width: 100%;
+    }
+  }
+  .form_login {
+    margin-top: 20px;
+    width: 50%;
+    padding: 0 40px;
+    .logo {
+      display: flex;
+      margin: 0 auto;
+      margin-bottom: 30px;
+    }
+    .form_input_login {
+      .form_input_login_name {
+        margin-top: 20px;
+        p {
+          font-size: 15px;
+          font-weight: 600;
+          padding-left: 10px;
+        }
+        .input {
+          padding: 15px;
+          width: 100%;
+          border-radius: 20px;
+          border: 1px solid #ccc;
+        }
+        .show_password {
+          display: flex;
+          margin-top: 5px;
+          margin-left: 3px;
+          p {
+            font-weight: 100;
+          }
+        }
+      }
+      .btn_login {
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 20px;
+        border: 1px solid #ccc;
+        color: #fff;
+        font-size: 15px;
+        background-color: var(--background-color-Main);
+      }
+    }
+    a {
+      text-decoration: none;
+      .Already {
+        color: var(--color-Main);
+        text-align: end;
+        margin-top: 15px;
+      }
+      .Already:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}
