@@ -1,0 +1,38 @@
+.Revenue {
+  display: flex;
+  margin-top: 110px;
+  .chart_tron {
+    .tron {
+      height: 200px;
+    }
+  }
+  .table {
+    width: 60%;
+    margin-left: 20px;
+    .title_table {
+      display: flex;
+      background-color: #1bb1ec;
+      border-radius: 10px;
+      p {
+        flex: 1;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      }
+    }
+    .infor_table {
+      display: flex;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      /* background-color: #ccc; */
+      p {
+        flex: 1;
+        text-align: center;
+        padding: 20px;
+      }
+    }
+    .infor_table:hover {
+      background-color: #dfdfdf;
+    }
+  }
+}
