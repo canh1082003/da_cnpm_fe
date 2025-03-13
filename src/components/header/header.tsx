@@ -5,6 +5,7 @@ import anh1 from "../../assets/img/anh1.png";
 import { useState } from "react";
 import { Header_Menu } from "./header_menu";
 import { useNavigate } from "react-router-dom";
+import { BellAlertIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
   const [selectedMenu, setSelectedMenu] = useState(Header_Menu[0]?.name || "");
@@ -69,8 +70,9 @@ const Header = () => {
               <img src={language} className="imgLanguage" alt="Language" />
               <span>Eng(US)</span>
             </div>
-            <div className="ic_notifi">
-              <span className="sub_notifi">1</span>
+            <div className="notifi">
+              <BellAlertIcon className="ic_notifi" />
+              {/* <span className="sub_notifi">1</span> */}
             </div>
             <div className="information">
               <img src={anh1} className="top_10" alt="User Avatar" />
