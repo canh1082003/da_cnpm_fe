@@ -1,15 +1,15 @@
 import { Routes, Route } from "react-router-dom";
-import { Home } from "../pages/Home/Home";
+import { Home } from "../pages/Home/UI_shipper/Home";
 import { Login } from "../pages/Auth/login/Login";
 import { Register } from "../pages/Auth/register/Register";
 
 import MainLayOut from "../LayOut/MainLayOut";
-import Profile from "../pages/Home/Profile";
-import Manage from "../pages/Home/Manage";
-import Revenue from "../pages/Home/Revenue";
-import Shipment from "../pages/Home/Shipment";
-import OrderProblem from "../pages/Home/OrderProblem";
-import Order from "../pages/Home/Order/Order";
+import Profile from "../pages/Home/UI_shipper/Profile";
+import Manage from "../pages/Home/UI_shipper/Manage";
+import Revenue from "../pages/Home/UI_shipper/Revenue";
+import Shipment from "../pages/Home/UI_shipper/Shipment";
+import OrderProblem from "../pages/Home/UI_shipper/OrderProblem";
+import Order from "../pages/Home/UI_shipper/Order";
 
 export const AppRoutes = () => {
   return (

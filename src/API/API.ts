@@ -1,7 +1,7 @@
 import axios, { type AxiosInstance } from "axios";
 import { baseURL } from "./constant";
 import { toast } from "react-toastify";
-import { LOGIN_URL, REGISTER_URL } from "../hooks/constant";
+import { LOGIN_URL, LOGOUT_URL, REGISTER_URL } from "../hooks/constant";
 import { ApiSuccessResponse } from "../hooks/type";
 import { LoginData, RegisterData } from "../hooks/auth/use/type";
 export class Api {
@@ -49,6 +49,10 @@ export class Api {
                 window.location.href = "/home/shipper";
               }, 6000);
             }
+            return response;
+          }
+          case LOGOUT_URL: {
+            localStorage.removeItem("userInfo");
             return response;
           }
 

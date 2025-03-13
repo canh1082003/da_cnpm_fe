@@ -1,6 +1,5 @@
-import React from "react";
-import "../../style/shipment.css"
-import "./style.css";
+import "../../../style/shipment.css";
+import "../style.css";
 const Shipment = () => {
   return (
     <div className="a">
@@ -82,43 +81,39 @@ const Shipment = () => {
       <div className="content">
         <div className="tracking_result">
           <h3>📍 Tracking result</h3>
-         <div className="ko">
-         <div className="ok">
-            <span>5:50 PM </span>
-            <ul className="tracking-timeline">
-              <h2>Đơn hàng kho phân loại HN SOC</h2>
-              <li>Kiện hàng đã đến HN SOC</li>
-            </ul>
+          <div className="ko">
+            <div className="ok">
+              <span>5:50 PM </span>
+              <ul className="tracking-timeline">
+                <h2>Đơn hàng kho phân loại HN SOC</h2>
+                <li>Kiện hàng đã đến HN SOC</li>
+              </ul>
+            </div>
+            <div className="ok">
+              <span>5:50 PM</span>
+              <ul className="tracking-timeline">
+                <h2>Đơn hàng kho phân loại HN SOC</h2>
+                <li>Kiện hàng đã đến HN SOC</li>
+              </ul>
+            </div>
+            <div className="ok">
+              <span>5:50 PM</span>
+              <ul className="tracking-timeline">
+                <h2>Đơn hàng kho phân loại HN SOC</h2>
+                <li>Kiện hàng đã đến HN SOC</li>
+              </ul>
+            </div>
+            <div className="ok">
+              <span>5:50 PM</span>
+              <ul className="tracking-timeline">
+                <h2>Đơn hàng kho phân loại HN SOC</h2>
+                <li>Kiện hàng đã đến HN SOC</li>
+              </ul>
+            </div>
           </div>
-          <div className="ok">
-            <span>5:50 PM</span>
-            <ul className="tracking-timeline">
-              <h2>Đơn hàng kho phân loại HN SOC</h2>
-              <li>Kiện hàng đã đến HN SOC</li>
-            </ul>
-          </div>
-          <div className="ok">
-            <span>5:50 PM</span>
-            <ul className="tracking-timeline">
-              <h2>Đơn hàng kho phân loại HN SOC</h2>
-              <li>Kiện hàng đã đến HN SOC</li>
-            </ul>
-          </div>
-          <div className="ok">
-            <span>5:50 PM</span>
-            <ul className="tracking-timeline">
-              <h2>Đơn hàng kho phân loại HN SOC</h2>
-              <li>Kiện hàng đã đến HN SOC</li>
-            </ul>
-          </div>
-         </div>
-      
-
-         
         </div>
       </div>
     </div>
-
   );
 };
 

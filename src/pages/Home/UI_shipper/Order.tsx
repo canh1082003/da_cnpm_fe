@@ -1,6 +1,5 @@
-import React from "react";
-import "../Order/Order.css";
-import "../style.css";
+import "../../Home/style.css";
+import "../../../style/order.css";
 const Order = () => {
   return (
     <div>
