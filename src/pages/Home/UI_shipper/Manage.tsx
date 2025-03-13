@@ -1,6 +1,6 @@
 import React from "react";
-import "./style.css";
-import "../../style/Manage.css";
+import "../style.css";
+import "../../../style/Manage.css";
 const Manage = () => {
   return (
     <div className="style">
