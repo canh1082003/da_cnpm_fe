@@ -29,6 +29,7 @@
 
   .profile_stats {
     display: flex;
+<<<<<<< HEAD
     justify-content: left;
     gap: 100px;
     padding: 20px 0;
@@ -39,6 +40,17 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+=======
+    flex-direction: column;
+    gap: 0;
+    
+    .profile_cover_photo {
+      width: 100%;
+      position: relative;
+      text-align: center;
+      margin-top: 0;
+      
+>>>>>>> bf61ec8f800ec32c55e1ec8af0d6702e762b93b8
     }
 
     .profile_stat_item h3 {
@@ -134,7 +146,60 @@
         }
         .post_select h3 {
           margin-top: 10px;
+<<<<<<< HEAD
           font-weight: bold;
+=======
+  
+          button {
+            padding: 8px 12px;
+            border: none;
+            background: #28a745;
+            color: white;
+            border-radius: 50px;
+            cursor: pointer;
+          }
+  
+          button:hover {
+            background: #218838;
+          }
+  
+          .post_btn {
+            
+            background: #0088ff;
+          }
+  
+          .post_btn:hover {
+            
+            background: #0056b3;
+          }
+          .post_select {
+            display: flex;
+            gap: 10px;
+  
+            .icon_size {
+              width: 24px;
+              height: 24px;
+            }
+            .article_btn {
+              background: #c32e9b;
+            }
+            .article_btn:hover {
+              background: #902273;
+            }
+          }
+          .post_select h3 {
+            margin-top: 10px;
+            font-weight: bold;
+          }
+        }
+        textarea {
+          width: 100%;
+          height: 60px;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid #ccc;
+          resize: none;
+>>>>>>> bf61ec8f800ec32c55e1ec8af0d6702e762b93b8
         }
       }
       textarea {
