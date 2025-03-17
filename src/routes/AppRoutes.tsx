@@ -10,6 +10,7 @@ import Revenue from "../pages/Home/Revenue";
 import Shipment from "../pages/Home/Shipment";
 import OrderProblem from "../pages/Home/OrderProblem";
 import Order from "../pages/Home/Order/Order";
+import Shipper from "../pages/Shipper/Shipper";
 
 export const AppRoutes = () => {
   return (
@@ -24,6 +25,7 @@ export const AppRoutes = () => {
         <Route path="/shipment" element={<Shipment />} />
         <Route path="/orderProblem" element={<OrderProblem />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/shipper" element={<Shipper />} />
       </Route>
     </Routes>
   );

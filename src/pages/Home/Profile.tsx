@@ -1,12 +1,11 @@
 import React from "react";
-import "./style.css";
 import "../../style/profile.css";
 import { UserCircleIcon, CheckBadgeIcon, DocumentTextIcon, MapPinIcon, EnvelopeIcon, BriefcaseIcon, GlobeAltIcon, PhotoIcon} from "@heroicons/react/24/outline";
 const Profile = () => {
   return (
     <div className="profile_container style">
             <div className="profile_content">
-                <div className="profile-section">
+                <div className="profile_section">
                     <div className="profile_cover_photo">
                         <img 
                             src="https://img.tripi.vn/cdn-cgi/image/width=700,height=700/https://gcs.tripi.vn/public-tripi/tripi-feed/img/474099XYj/hinh-nen-bien-dep-cho-dien-thoai-tuyet-dep_025637077.jpg" 
