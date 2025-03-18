@@ -1,10 +1,35 @@
-import "../../../style/shipment.css";
+
+import  { useEffect, useState } from "react";
 import "../style.css";
+
+
+import "../UI_shipper/style/shipment.css";
+
 const Shipment = () => {
+  const [openMenuIndex, setOpenMenuIndex] = useState(null);
+  const toggleMenu = (index : any) => {
+    setOpenMenuIndex(openMenuIndex === index ? null : index);
+  };
+  useEffect(() => {
+    const handleClickOutside = (event : any) => {
+      if (!event.target.closest(".optional")) {
+        setOpenMenuIndex(null);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
+
+  
+
   return (
     <div className="a">
       <div className="shipper-profile">
-        <div className="profile_header">
+        <div className="profile_header"> 
           <img
             src="https://jobsgo.vn/blog/wp-content/uploads/2021/07/cach-dang-ky-lam-shipper-giao-hang-tiet-kiem.jpg"
             alt="Shipper"
@@ -25,36 +50,30 @@ const Shipment = () => {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td className="">#0123ABCD</td>
-                <td>Dec 18, 2020</td>
-                <td className="processing">Processing</td>
-                <td>...</td>
-              </tr>
-              <tr>
-                <td>#0123ABCD</td>
-                <td>Dec 18, 2020</td>
-                <td className="shipped">Shipped</td>
-                <td>...</td>
-              </tr>
-              <tr>
-                <td>#0123ABCD</td>
-                <td>Dec 18, 2020</td>
-                <td className="delivered">Delivered</td>
-                <td>...</td>
-              </tr>
-              <tr>
-                <td>#0123ABCD</td>
-                <td>Dec 18, 2020</td>
-                <td className="cancelled">Cancelled</td>
-                <td>...</td>
-              </tr>
-              <tr>
-                <td>#0123ABCD</td>
-                <td>Dec 18, 2020</td>
-                <td className="pending">Pending</td>
-                <td>...</td>
-              </tr>
+              {[...Array(5)].map((_, index) => (
+                <tr key={index}>
+                  <td>#0123ABCD</td>
+                  <td>Dec 18, 2020</td>
+                  <td className="processing">Processing</td>
+                  <td className="action">
+                    <div className="optional">
+                      {openMenuIndex === index ? (
+                        <div className="btn_optional">
+                          <button className="btn_edit">Edit</button>
+                          <button className="btn_delete">Delete</button>
+                        </div>
+                      ) : (
+                        <div className="dot" onClick={(e) => {
+                          e.stopPropagation(); 
+                          toggleMenu(index);
+                        }}>
+                          ...
+                        </div>
+                      )}
+                    </div>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
 

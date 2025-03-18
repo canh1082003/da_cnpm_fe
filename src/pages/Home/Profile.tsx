@@ -1,5 +1,5 @@
 import React from "react";
-import "../../style/profile.css";
+import "../Home/UI_shipper/style/profile.css";
 import { UserCircleIcon, CheckBadgeIcon, DocumentTextIcon, MapPinIcon, EnvelopeIcon, BriefcaseIcon, GlobeAltIcon, PhotoIcon} from "@heroicons/react/24/outline";
 const Profile = () => {
   return (

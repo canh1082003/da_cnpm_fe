@@ -4,22 +4,16 @@ import { Login } from "../pages/Auth/login/Login";
 import { Register } from "../pages/Auth/register/Register";
 
 import MainLayOut from "../LayOut/MainLayOut";
-<<<<<<< HEAD
-import Profile from "../pages/Home/UI_shipper/Profile";
+
+import Profile from "../pages/Home/Profile";
 import Manage from "../pages/Home/UI_shipper/Manage";
 import Revenue from "../pages/Home/UI_shipper/Revenue";
 import Shipment from "../pages/Home/UI_shipper/Shipment";
 import OrderProblem from "../pages/Home/UI_shipper/OrderProblem";
 import Order from "../pages/Home/UI_shipper/Order";
-=======
-import Profile from "../pages/Home/Profile";
-import Manage from "../pages/Home/Manage";
-import Revenue from "../pages/Home/Revenue";
-import Shipment from "../pages/Home/Shipment";
-import OrderProblem from "../pages/Home/OrderProblem";
-import Order from "../pages/Home/Order/Order";
 import Shipper from "../pages/Shipper/Shipper";
->>>>>>> bf61ec8f800ec32c55e1ec8af0d6702e762b93b8
+import HomeUser from "../pages/Home/UI_User/homeUser";
+
 
 export const AppRoutes = () => {
   return (
@@ -36,6 +30,8 @@ export const AppRoutes = () => {
         <Route path="/order" element={<Order />} />
         <Route path="/shipper" element={<Shipper />} />
       </Route>
+      <Route path="/homeUser" element={<HomeUser />} />
+
     </Routes>
   );
 };

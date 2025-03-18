@@ -29,7 +29,6 @@
 
   .profile_stats {
     display: flex;
-<<<<<<< HEAD
     justify-content: left;
     gap: 100px;
     padding: 20px 0;
@@ -40,18 +39,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-=======
-    flex-direction: column;
-    gap: 0;
+
+      flex-direction: column;
+      gap: 0;
     
     .profile_cover_photo {
       width: 100%;
       position: relative;
       text-align: center;
       margin-top: 0;
-      
->>>>>>> bf61ec8f800ec32c55e1ec8af0d6702e762b93b8
-    }
+   }
 
     .profile_stat_item h3 {
       font-weight: bold;
@@ -146,9 +143,9 @@
         }
         .post_select h3 {
           margin-top: 10px;
-<<<<<<< HEAD
+
           font-weight: bold;
-=======
+
   
           button {
             padding: 8px 12px;
@@ -199,7 +196,8 @@
           border-radius: 5px;
           border: 1px solid #ccc;
           resize: none;
->>>>>>> bf61ec8f800ec32c55e1ec8af0d6702e762b93b8
+
+          font-weight: bold;
         }
       }
       textarea {
@@ -212,4 +210,5 @@
       }
     }
   }
+}
 }

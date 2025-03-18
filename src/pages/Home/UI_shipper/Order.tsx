@@ -1,5 +1,6 @@
 import "../../Home/style.css";
-import "../../../style/order.css";
+import "../UI_shipper/style/order.css";
+
 const Order = () => {
   return (
     <div>
