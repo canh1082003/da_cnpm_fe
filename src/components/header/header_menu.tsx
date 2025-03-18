@@ -67,7 +67,7 @@ export const Header_Menu: MenuItem[] = [
     ),
   },
   {
-    path: "/order",
+    path: "/orderProblem",
     name: "Order Problem",
     icon: (
       <svg

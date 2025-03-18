@@ -5,11 +5,29 @@ import anh1 from "../../assets/img/anh1.png";
 import { useState } from "react";
 import { Header_Menu } from "./header_menu";
 import { useNavigate } from "react-router-dom";
+import { BellAlertIcon } from "@heroicons/react/24/outline";
 
 const Header = () => {
   const [selectedMenu, setSelectedMenu] = useState(Header_Menu[0]?.name || "");
   const navigate = useNavigate();
   const header_menu = Header_Menu;
+  const [userInfo] = useState(() => {
+    const storedUser = localStorage.getItem("userInfo");
+    return storedUser ? JSON.parse(storedUser) : null;
+  });
+  const removeUserInfo = () => {
+    localStorage.removeItem("userInfo");
+    window.location.reload();
+  };
+  const [showLogout, setShowLogout] = useState(false);
+
+  const handleToggleLogout = () => {
+    if (!userInfo) {
+      navigate("/login");
+    } else {
+      setShowLogout((prev) => !prev);
+    }
+  };
   const render_Dashboard = () => {
     return (
       <div className="dashboard">
@@ -52,11 +70,20 @@ const Header = () => {
               <img src={language} className="imgLanguage" alt="Language" />
               <span>Eng(US)</span>
             </div>
-            <div className="ic_notifi">
-              <span className="sub_notifi">1</span>
+            <div className="notifi">
+              <BellAlertIcon className="ic_notifi" />
+              {/* <span className="sub_notifi">1</span> */}
             </div>
             <div className="information">
               <img src={anh1} className="top_10" alt="User Avatar" />
+              <div className="information_name" onClick={handleToggleLogout}>
+                {userInfo?.name ? userInfo.name : "Login"}
+                {userInfo?.name && showLogout && (
+                  <p className="logout_user" onClick={removeUserInfo}>
+                    Log Out
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>

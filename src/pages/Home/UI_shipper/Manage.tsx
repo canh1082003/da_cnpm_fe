@@ -1,6 +1,8 @@
-import  { useEffect, useState } from "react";
-import "./style.css";
-import "../../style/Manage.css";
+
+import React, { useEffect, useState } from "react";
+import "../style.css";
+import "../UI_shipper/style/Manage.css";
+
 const Manage = () => {
   const [openMenuIndex, setOpenMenuIndex] = useState(null);
     const toggleMenu = (index : any) => {

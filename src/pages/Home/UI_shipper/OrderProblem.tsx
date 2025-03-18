@@ -1,5 +1,5 @@
-import React from "react";
-import "./style.css";
+import "../style.css";
+// import "../UI_shipper/style/order.css";
 
 const OrderProblem = () => {
   return (

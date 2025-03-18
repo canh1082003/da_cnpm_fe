@@ -1,6 +1,12 @@
+
 import  { useEffect, useState } from "react";
 import "../../style/shipment.css";
 import "./style.css";
+
+
+import "../UI_shipper/style/shipment.css";
+
+import "../style.css";
 const Shipment = () => {
   const [openMenuIndex, setOpenMenuIndex] = useState(null);
   const toggleMenu = (index : any) => {

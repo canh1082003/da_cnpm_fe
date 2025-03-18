@@ -1,5 +1,5 @@
-import "./style.css";
-import "../../style/home.css";
+import "../style.css";
+import "../UI_shipper/style/home.css";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -13,9 +13,8 @@ import {
   Legend,
 } from "chart.js";
 import { Bar, Doughnut, Line } from "react-chartjs-2";
-import { cot, hang } from "./data";
+import { cot, hang } from "../data";
 
-// Đăng ký các thành phần cần thiết
 ChartJS.register(
   LineElement,
   PointElement,

@@ -1,16 +1,18 @@
 import { Routes, Route } from "react-router-dom";
-import { Home } from "../pages/Home/Home";
+import { Home } from "../pages/Home/UI_shipper/Home";
 import { Login } from "../pages/Auth/login/Login";
 import { Register } from "../pages/Auth/register/Register";
 
 import MainLayOut from "../LayOut/MainLayOut";
-import Profile from "../pages/Home/Profile";
-import Manage from "../pages/Home/Manage";
-import Revenue from "../pages/Home/Revenue";
-import Shipment from "../pages/Home/Shipment";
-import OrderProblem from "../pages/Home/OrderProblem";
-import Order from "../pages/Home/Order/Order";
+
+import Profile from "../pages/Home/UI_shipper/Profile";
+import Manage from "../pages/Home/UI_shipper/Manage";
+import Revenue from "../pages/Home/UI_shipper/Revenue";
+import Shipment from "../pages/Home/UI_shipper/Shipment";
+import OrderProblem from "../pages/Home/UI_shipper/OrderProblem";
+import Order from "../pages/Home/UI_shipper/Order";
 import Shipper from "../pages/Shipper/Shipper";
+import HomeUser from "../pages/Home/UI_User/homeUser";
 
 export const AppRoutes = () => {
   return (
@@ -27,6 +29,8 @@ export const AppRoutes = () => {
         <Route path="/order" element={<Order />} />
         <Route path="/shipper" element={<Shipper />} />
       </Route>
+      <Route path="/homeUser" element={<HomeUser />} />
+
     </Routes>
   );
 };
