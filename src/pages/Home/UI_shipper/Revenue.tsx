@@ -1,7 +1,8 @@
 import "../style.css";
 import { Doughnut } from "react-chartjs-2";
 import { cot } from "../data";
-import "../../../style/Revenue.css";
+import "../UI_shipper/style/Revenue.css";
+
 const Revenue = () => {
   const dbCot = cot;
   return (

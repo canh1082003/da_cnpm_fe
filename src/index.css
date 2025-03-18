@@ -6,6 +6,10 @@
   box-sizing: border-box;
   font-family: "Host Grotesk", serif;
   font-weight: 300;
+  outline: none; border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: .2s linear;
 }
 :root {
   --color-Main: #0088ff;

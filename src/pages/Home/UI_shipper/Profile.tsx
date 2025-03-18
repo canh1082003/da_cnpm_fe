@@ -1,5 +1,6 @@
 import "../style.css";
-import "../../../style/profile.css";
+import "../UI_shipper/style/profile.css";
+
 import {
   UserCircleIcon,
   CheckBadgeIcon,

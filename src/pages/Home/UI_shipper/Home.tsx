@@ -1,5 +1,5 @@
 import "../style.css";
-import "../../../style/home.css";
+import "../UI_shipper/style/home.css";
 import {
   Chart as ChartJS,
   ArcElement,
