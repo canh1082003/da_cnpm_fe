@@ -1,4 +1,6 @@
-import "../../../style/shipment.css";
+
+import "../UI_shipper/style/shipment.css";
+
 import "../style.css";
 const Shipment = () => {
   return (

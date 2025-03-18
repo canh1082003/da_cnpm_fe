@@ -12,6 +12,7 @@ import Shipment from "../pages/Home/UI_shipper/Shipment";
 import OrderProblem from "../pages/Home/UI_shipper/OrderProblem";
 import Order from "../pages/Home/UI_shipper/Order";
 import Shipper from "../pages/Shipper/Shipper";
+import HomeUser from "../pages/Home/UI_User/homeUser";
 
 export const AppRoutes = () => {
   return (
@@ -28,6 +29,8 @@ export const AppRoutes = () => {
         <Route path="/order" element={<Order />} />
         <Route path="/shipper" element={<Shipper />} />
       </Route>
+      <Route path="/homeUser" element={<HomeUser />} />
+
     </Routes>
   );
 };
