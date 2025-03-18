@@ -4,12 +4,14 @@ import { Login } from "../pages/Auth/login/Login";
 import { Register } from "../pages/Auth/register/Register";
 
 import MainLayOut from "../LayOut/MainLayOut";
+
 import Profile from "../pages/Home/UI_shipper/Profile";
 import Manage from "../pages/Home/UI_shipper/Manage";
 import Revenue from "../pages/Home/UI_shipper/Revenue";
 import Shipment from "../pages/Home/UI_shipper/Shipment";
 import OrderProblem from "../pages/Home/UI_shipper/OrderProblem";
 import Order from "../pages/Home/UI_shipper/Order";
+import Shipper from "../pages/Shipper/Shipper";
 
 export const AppRoutes = () => {
   return (
@@ -24,6 +26,7 @@ export const AppRoutes = () => {
         <Route path="/shipment" element={<Shipment />} />
         <Route path="/orderProblem" element={<OrderProblem />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/shipper" element={<Shipper />} />
       </Route>
     </Routes>
   );
