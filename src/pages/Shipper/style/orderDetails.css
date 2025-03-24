@@ -1,0 +1,212 @@
+.order_details_overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1000;
+	.order_details_container {
+		background: white;
+		width: 600px;
+		height: 90vh;
+		overflow-y: auto;
+		scrollbar-width: none;
+		border-radius: 8px;
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+		position: relative;
+		.order_details_header {
+			border-radius: 8px 8px 0 0;
+			width: 600px;
+			position: fixed;
+			padding: 0 20px;
+			background-color: var(--background-color-Main);
+			h2 {
+				display: flex;
+				padding: 30px 0;
+				font-weight: 500;
+				gap: 10px;
+				p {
+					color: #fff;
+				}
+			}
+			.close_btn {
+				position: absolute;
+				top: 30px;
+				right: 20px;
+				background: #db0000;
+				color: white;
+				border: none;
+				padding: 5px 10px;
+				cursor: pointer;
+				border-radius: 5px;
+				font-size: 17px;
+				font-weight: 700;
+			}
+		}
+		.order_details_content {
+			margin-top: 92px;
+			padding: 20px;
+			.status_btn {
+				color: #fff;
+				border-radius: 5px;
+				padding: 5px 20px;
+				font-weight: 500;
+				font-size: 16px;
+				margin-bottom: 20px;
+			}
+			.status_btn.đang-vận-chuyển {
+				background-color: #e6e335;
+				color: #fff;
+			}
+
+			.status_btn.đang-xử-lý {
+				background-color: var(--color-Main);
+				color: #fff;
+			}
+
+			.status_btn.đã-giao {
+				background-color: #74E674;
+				color: #fff;
+			}
+
+			.status_btn.chờ-giải-quyết {
+				background-color: #c87459;
+				color: #fff;
+			}
+
+			.status_btn.đã-hủy {
+				background-color: #dc3545;
+				color: #fff;
+			}
+
+			.order_info {
+				border-top: 2px solid #ddd;
+				padding-top: 20px;
+				.detail_infor {
+					margin-left: 20px;
+					margin-top: 20px;
+					font-size: 15px;
+					p {
+						color: #888888;
+						margin-top: 20px;
+					}
+					span {
+						font-weight: 400;
+					}
+				}
+			}
+			.note,
+			.update_status,
+			.update_location {
+				margin-left: 20px;
+				margin-top: 20px;
+			}
+			.note {
+				textarea {
+					font-size: 15px;
+					border: 2px solid #ccc;
+					width: 540px;
+					padding: 10px 20px;
+					border-radius: 5px;
+					resize: none;
+				}
+			}
+			.status_history {
+				margin-top: 20px;
+				.history_content {
+					display: flex;
+				}
+				.timeline {
+					list-style: none;
+					position: relative;
+          margin-top: 10px;
+				}
+
+				.timeline li {
+					display: flex;
+					align-items: center;
+					gap: 20px;
+					position: relative;
+					margin-bottom: 50px;
+				}
+
+				.update-label {
+					background: #e6e335;
+					color: #000;
+					font-size: 14px;
+					font-weight: 400;
+					padding: 5px 10px;
+					border-radius: 5px;
+					white-space: nowrap;
+					width: 100px;
+					text-align: center;
+				}
+				.update-label.completed {
+					background: #74E674;
+					color: white;
+				}
+				.status-circle {
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+					background: #ddd;
+					position: relative;
+					z-index: 2;
+				}
+				.timeline li::after {
+					content: "";
+					position: absolute;
+					width: 5px;
+					height: 90px;
+					background: #ccc;
+					left: 132.5px;
+					top: 30px;
+					z-index: 1;
+				}
+				.timeline li:last-child::after {
+					display: none;
+				}
+				.timeline li.completed .status-circle {
+					background: var(--color-Main);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: white;
+					font-weight: bold;
+				}
+
+				.timeline li.completed::after {
+					background: #007bff;
+				}
+
+				.timeline li.completed .status-content {
+					color: black;
+					font-weight: bold;
+				}
+
+				.timeline li:not(.completed) .status-content {
+					color: gray;
+				}
+			}
+			.buttons {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
+	}
+}
+h3 {
+	font-size: 18px;
+	font-weight: 500;
+}
+select {
+	border-radius: 5px;
+	border: 2px solid #ccc;
+	padding: 10px 20px;
+	width: 100%;
+	font-size: 15px;
+}
