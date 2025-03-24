@@ -316,7 +316,7 @@ const HomeUser = () => {
             </div>
           </div>
         </div>
-        <footer>Bản quyền thuộc về GroupS ©2025</footer>
+        <footer>Bản quyền thuộc về Group5 ©2025</footer>
       </div>
     </div>
   );
