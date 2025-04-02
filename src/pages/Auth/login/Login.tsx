@@ -5,7 +5,7 @@ import "../../../pages/Home/style.css";
 import "../login/login.css";
 import { useState } from "react";
 import api from "../../../API/API";
-import { LOGIN_URL } from "../../../hooks/constant";
+import { LOGIN_URL } from "../../../hooks/auth/use/constant";
 export const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
