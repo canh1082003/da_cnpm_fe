@@ -25,7 +25,7 @@ const HomeUser = () => {
           </span>
 
           <nav>
-            <a href="#login" className="btn">
+            <a href="/login" className="btn">
               Đăng nhập / Đăng kí
             </a>
           </nav>

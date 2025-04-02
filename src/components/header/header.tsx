@@ -17,7 +17,7 @@ const Header = () => {
   });
   const removeUserInfo = () => {
     localStorage.removeItem("userInfo");
-    window.location.reload();
+    window.location.href = "/";
   };
   const [showLogout, setShowLogout] = useState(false);
 
