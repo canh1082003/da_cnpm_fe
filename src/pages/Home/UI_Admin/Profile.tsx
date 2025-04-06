@@ -1,5 +1,5 @@
 import "../style.css";
-import "../UI_shipper/style/profile.css";
+import "../UI_Admin/style/profile.css";
 
 import {
   UserCircleIcon,
