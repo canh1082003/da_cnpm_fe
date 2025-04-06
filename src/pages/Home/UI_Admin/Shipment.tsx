@@ -1,17 +1,15 @@
-
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "../style.css";
 
-
-import "../UI_shipper/style/shipment.css";
+import "../UI_Admin/style/shipment.css";
 
 const Shipment = () => {
   const [openMenuIndex, setOpenMenuIndex] = useState(null);
-  const toggleMenu = (index : any) => {
+  const toggleMenu = (index: any) => {
     setOpenMenuIndex(openMenuIndex === index ? null : index);
   };
   useEffect(() => {
-    const handleClickOutside = (event : any) => {
+    const handleClickOutside = (event: any) => {
       if (!event.target.closest(".optional")) {
         setOpenMenuIndex(null);
       }
@@ -23,13 +21,10 @@ const Shipment = () => {
     };
   }, []);
 
-
-  
-
   return (
     <div className="a">
       <div className="shipper-profile">
-        <div className="profile_header"> 
+        <div className="profile_header">
           <img
             src="https://jobsgo.vn/blog/wp-content/uploads/2021/07/cach-dang-ky-lam-shipper-giao-hang-tiet-kiem.jpg"
             alt="Shipper"
@@ -63,10 +58,13 @@ const Shipment = () => {
                           <button className="btn_delete">Delete</button>
                         </div>
                       ) : (
-                        <div className="dot" onClick={(e) => {
-                          e.stopPropagation(); 
-                          toggleMenu(index);
-                        }}>
+                        <div
+                          className="dot"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleMenu(index);
+                          }}
+                        >
                           ...
                         </div>
                       )}

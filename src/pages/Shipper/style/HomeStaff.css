@@ -111,23 +111,23 @@
               font-weight: 500;
               font-size: 16px;
             }
-            .status.đang-vận-chuyển {
+            .status.pending {
               background-color: #e6e335;
             }
 
-            .status.đang-xử-lý {
+            .status.processing {
               background-color: var(--color-Main);
             }
 
-            .status.đã-giao {
+            .status.shipped {
               background-color: #74e674;
             }
 
-            .status.chờ-giải-quyết {
+            .status.delivered {
               background-color: #c87459;
             }
 
-            .status.đã-hủy {
+            .status.cancelled {
               background-color: #dc3545;
             }
           }

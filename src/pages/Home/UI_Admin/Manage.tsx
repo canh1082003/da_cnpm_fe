@@ -1,15 +1,14 @@
-
 import React, { useEffect, useState } from "react";
 import "../style.css";
-import "../UI_shipper/style/Manage.css";
+import "../UI_Admin/style/Manage.css";
 
 const Manage = () => {
   const [openMenuIndex, setOpenMenuIndex] = useState(null);
-    const toggleMenu = (index : any) => {
-      setOpenMenuIndex(openMenuIndex === index ? null : index);
-    };
- useEffect(() => {
-    const handleClickOutside = (event : any) => {
+  const toggleMenu = (index: any) => {
+    setOpenMenuIndex(openMenuIndex === index ? null : index);
+  };
+  useEffect(() => {
+    const handleClickOutside = (event: any) => {
       if (!event.target.closest(".optional")) {
         setOpenMenuIndex(null);
       }
@@ -18,10 +17,8 @@ const Manage = () => {
     document.addEventListener("click", handleClickOutside);
     return () => {
       document.removeEventListener("click", handleClickOutside);
-    };  
+    };
   }, []);
-
-
 
   return (
     <div className="style">
@@ -38,24 +35,25 @@ const Manage = () => {
               <p>#abcdffc</p>
               <p>10/20/2002</p>
               <p>100</p>
-              <p className="action" >
+              <p className="action">
                 {openMenuIndex === index ? (
-                          <div className="btn_action">
-                            <button className="edit">Edit</button>
-                            <button className="delete">Delete</button>
-                          </div>
-                        ) : (
-                          <div className="dot" onClick={(e) => {
-                            e.stopPropagation(); 
-                            toggleMenu(index);
-                          }}>
-                            ...
-                          </div>
+                  <div className="btn_action">
+                    <button className="edit">Edit</button>
+                    <button className="delete">Delete</button>
+                  </div>
+                ) : (
+                  <div
+                    className="dot"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleMenu(index);
+                    }}
+                  >
+                    ...
+                  </div>
                 )}
               </p>
             </div>
-
-
           ))}
           {/* <div className="infor_table">
             <p>#abcdffc</p>
