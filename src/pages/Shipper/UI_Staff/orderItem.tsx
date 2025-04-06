@@ -3,5 +3,6 @@ export interface OrderItem {
     address: string;
     time: string;
     status: string;
-    location: string
+    location: string;
+    orderCode: string;
   }

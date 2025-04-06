@@ -4,9 +4,15 @@ import shopping from "../../../assets/img/ImgShipper/shopping.jpg";
 import "../style/order.css";
 import { GETALLORDER_BYSTATUS_URL } from "../../../hooks/auth/shipper/constant";
 import { toast } from "react-toastify";
-
+interface Order {
+  id:number;
+  status:string;
+  orderCode:string;
+  location:string;
+  total_amount:number
+}
 export default function OrderManagement() {
-  const [ordersByStatus, setOrdersByStatus] = useState([]);
+  const [ordersByStatus, setOrdersByStatus] = useState<Order[]>([]);
 
   const fetchOrdersByStatus = async () => {
     try {
@@ -72,12 +78,7 @@ export default function OrderManagement() {
                   <span>📍</span>
                   <p>Giao đến: {order.location}</p>
                 </div>
-                <div className="time">
-                  <span>⏰</span>
-                  <p>
-                    Thời gian: {new Date(order.created_at).toLocaleString()}
-                  </p>
-                </div>
+              
                 <div className="total_amount">
                   <span>💰</span>
                   <p>Số tiền: {order.total_amount} VND</p>

@@ -1,19 +1,22 @@
 import { useState } from "react";
 import "../style/OrderDetails.css";
 import { OrderItem } from "./orderItem";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { UPDATEORDER_BY_ORDERCODE_URL } from "../../../hooks/auth/shipper/constant";
 
 interface OrderDetailsProps {
-  order: OrderItem;
+  orderCode: OrderItem;
   onClose: () => void;
   onUpdate: (updatedOrder: OrderItem) => void;
 }
 
 const STATUS_OPTIONS = [
-  "Đang vận chuyển",
-  "Đang xử lý",
-  "Đã giao",
-  "Chờ giải quyết",
-  "Đã hủy",
+  "pending",
+  "processcing",
+  "shipped",
+  "delivered",
+  "cancelled",
 ];
 
 const LOCATION_HISTORY = [
@@ -27,7 +30,6 @@ const LOCATION_HISTORY = [
 const OrderDetails = ({ order, onClose, onUpdate }: OrderDetailsProps) => {
   const [status, setStatus] = useState(order.status);
   const [location, setLocation] = useState(order.location);
-  const [note, setNote] = useState("");
 
   const handleStatusChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setStatus(e.target.value);
@@ -37,17 +39,32 @@ const OrderDetails = ({ order, onClose, onUpdate }: OrderDetailsProps) => {
     setLocation(e.target.value);
   };
 
-  const handleUpdate = () => {
-    const updatedOrder = { ...order, status, location };
-    onUpdate(updatedOrder);
-  };
+  const handleUpdate = async () => {
+    try {
 
+      const updatedOrder = { ...order, status, location };
+        const response = await axios.put(`${UPDATEORDER_BY_ORDERCODE_URL}/${order.orderCode}`, {
+        status,
+        location, 
+      });
+  
+      onUpdate(updatedOrder);
+  
+      toast.success("Cập nhật đơn hàng thành công!");
+  
+      onClose();
+    } catch (error) {
+      console.error(error);
+      toast.error("Có lỗi xảy ra khi cập nhật đơn hàng.");
+    }
+  };
+  
   return (
     <div className="order_details_overlay">
       <div className="order_details_container">
         <div className="order_details_header">
           <h2>
-            Đơn hàng: <p>{order.id}</p>
+            Đơn hàng: <p>{order.orderCode}</p>
           </h2>
           <button className="close_btn" onClick={onClose}>
             ✖
@@ -95,15 +112,7 @@ const OrderDetails = ({ order, onClose, onUpdate }: OrderDetailsProps) => {
               ))}
             </select>
           </div>
-
-          <div className="note">
-            <h3>Ghi Chú</h3>
-            <textarea
-              placeholder="Nhập ghi chú nội bộ về trạng thái đơn hàng..."
-              value={note}
-              onChange={(e) => setNote(e.target.value)}
-            ></textarea>
-          </div>
+         
 
           <div className="buttons">
             <button className="cancel-btn btn" onClick={onClose}>

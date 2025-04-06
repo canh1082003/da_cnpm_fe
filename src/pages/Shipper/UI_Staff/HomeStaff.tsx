@@ -5,6 +5,7 @@ import OrderStaff from "./orderStaff";
 import HistoryStaff from "./historyStaff";
 import ProfileStaff from "./profileStaff";
 import OrderDetails from "./orderDetails";
+import Order from "./order"
 import { OrderItem } from "./orderItem";
 import CreateOrderModal from "./component/createOrder";
 
@@ -12,23 +13,7 @@ const HomeStaff = () => {
   const [activeTab, setActiveTab] = useState("orders");
   const [selectedOrder, setSelectedOrder] = useState<OrderItem | null>(null);
   const [showCreateModal, setShowCreateModal] = useState(false);
-
-  const [orders, setOrders] = useState<OrderItem[]>([
-    {
-      id: "#0123ABCD",
-      address: "123 Nguyễn Văn Linh, Q.7, TP.HCM",
-      time: "14:50 - 11:20",
-      status: "Đang vận chuyển",
-      location: "",
-    },
-    {
-      id: "#0456XYZ",
-      address: "456 Trần Hưng Đạo, Q.1, TP.HCM",
-      time: "10:30 - 12:00",
-      status: "Đã giao",
-      location: "",
-    },
-  ]);
+  const [orders, setOrders] = useState<OrderItem[]>([]);
 
   const handleUpdateOrder = (updatedOrder: OrderItem) => {
     setOrders((prevOrders) =>
@@ -97,6 +82,12 @@ const HomeStaff = () => {
           </div>
 
           <div className="tabs">
+          <span
+              className={activeTab === "category" ? "active" : ""}
+              onClick={() => setActiveTab("category")}
+            >
+              Danh mục
+            </span>
             <span
               className={activeTab === "orders" ? "active" : ""}
               onClick={() => setActiveTab("orders")}
@@ -116,7 +107,7 @@ const HomeStaff = () => {
               Cá nhân
             </span>
           </div>
-
+          {activeTab === "category" && <Order />}
           {activeTab === "orders" && (
             <OrderStaff
               orders={orders}
