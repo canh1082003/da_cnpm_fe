@@ -2,9 +2,9 @@
   .chart {
     display: flex;
     .chart1 {
-      height: 300px;
       margin-bottom: 50px;
       canvas {
+        height: 300px;
         margin: auto;
       }
       .name_chart {
