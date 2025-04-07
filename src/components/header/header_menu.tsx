@@ -7,7 +7,7 @@ interface MenuItem {
 }
 export const Header_Menu: MenuItem[] = [
   {
-    path: "/",
+    path: "/homeAdmin",
     name: "Home",
     icon: (
       <svg

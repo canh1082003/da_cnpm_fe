@@ -1,17 +1,31 @@
 import "../UI_User/style/homeUser.css";
-import React from "react";
+import React, { useState } from "react";
 import main from "../../../assets/img/ImgUser/photo-1-15766667578391776901975-1622696128062-16226961283251701998759-1622704158065-1622704164100514724587.jpg";
 import img1 from "../../../assets/img/ImgUser/images.jpg";
 import imgVanChuyen from "../../../assets/img/ImgUser/van-chuyen-duong-bo.png";
+import axios from "axios";
+import { GETORDERCODE_BY_ORDER_URL } from "../../../hooks/auth/shipper/constant";
+interface Order {
+  id: number;
+  location: string;
+  orderCode: string;
+  status: string;
+  total_amount: number;
+  created_at: Date;
+  updated_at: Date;
+  shipperId: number;
+}
 const HomeUser = () => {
   const [orderCode, setOrderCode] = useState("");
   const [orderData, setOrderData] = useState<Order[]>([]);
+
   console.log(orderData);
   const fecthOrderCodeByOrder = async () => {
     try {
       const response = await axios.post(GETORDERCODE_BY_ORDER_URL, {
         orderCode: orderCode,
       });
+
       const data = response.data.data || [];
       const dataArray = Array.isArray(data) ? data : [data];
       setOrderData(dataArray);
@@ -40,7 +54,7 @@ const HomeUser = () => {
           </span>
 
           <nav>
-            <a href="#login" className="btn">
+            <a href="/login" className="btn">
               Đăng nhập / Đăng kí
             </a>
           </nav>
@@ -96,22 +110,59 @@ const HomeUser = () => {
               <button className="btn" onClick={fecthOrderCodeByOrder}>
                 tra cứu
               </button>
+
+            </div>
+            <div className="hi">
+              <div className="result">
+                <h3>Kết quả tra cứu</h3>
+              </div>
+
             </div>
             <hr />
-            {/* <div className="bc">
-                   <h2>Bưu Cục</h2>
-                   <div className="select-group">
-                       <select>
-                           <option>Chọn tỉnh/Thành phố</option>
-                       </select>
-                       <select>
-                           <option>Chọn Quận/Huyện</option>
-                       </select>
-                   </div>
-                   <button className="btn">tra cứu</button>
-               </div> */}
           </div>
         </div>
+        {Array.isArray(orderData) && orderData.length > 0 ? (
+          <div className="order-result-container">
+            {orderData.map((item) => (
+              <div key={item.id || item.orderCode} className="order-card">
+                <div className="order-header">
+                  <span className="order-id">
+                    Mã đơn hàng: {item.orderCode}
+                  </span>
+                  <span
+                    className={`order-status status-${item.status.toLowerCase()}`}
+                  >
+                    {item.status}
+                  </span>
+                </div>
+                <div className="order-details">
+                  <div className="detail-item">
+                    <div className="detail-label">Vị trí</div>
+                    <div className="detail-value">{item.location}</div>
+                  </div>
+                  <div className="detail-item">
+                    <div className="detail-label">Tổng tiền</div>
+                    <div className="detail-value">
+                      {parseFloat(item.total_amount).toLocaleString()} đ
+                    </div>
+                  </div>
+                  <div className="detail-item">
+                    <div className="detail-label">Shipper ID</div>
+                    <div className="detail-value">{item.shipperId}</div>
+                  </div>
+                  <div className="detail-item">
+                    <div className="detail-label">Ngày cập nhật</div>
+                    <div className="detail-value">
+                      {new Date(item.updated_at).toLocaleString("vi-VN")}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="no-results">Không tìm thấy dữ liệu đơn hàng</div>
+        )}
         <div className="about">
           <div className="content">
             <h3>
@@ -336,7 +387,7 @@ const HomeUser = () => {
             </div>
           </div>
         </div>
-        <footer>Bản quyền thuộc về GroupS ©2025</footer>
+        <footer>Bản quyền thuộc về Group5 ©2025</footer>
       </div>
     </div>
   );

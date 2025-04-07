@@ -1,0 +1,223 @@
+.container {
+  background-color: #ffffff;
+  /* min-height: 100vh; */
+  .main {
+    .header {
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      background: var(--background-color-Main);
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 15%;
+      .brand {
+        text-align: center;
+        h1,
+        h2 {
+          font-weight: 600;
+        }
+      }
+      .profile {
+        display: flex;
+        align-items: center;
+
+        .icon {
+          font-size: 18px;
+          margin-right: 30px;
+        }
+
+        .avatar {
+          background: #c5bbbb;
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+          border: 2px solid #ffffff;
+          font-size: 25px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: bold;
+        }
+      }
+    }
+    .content {
+      position: relative;
+      top: 100px;
+      .stats {
+        display: flex;
+        width: 70%;
+        margin: auto;
+        justify-content: space-between;
+        text-align: center;
+        padding: 15px;
+      }
+      .stats .number {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--color-Main);
+      }
+      .tabs {
+        display: flex;
+        width: 70%;
+        margin: auto;
+        justify-content: space-between;
+        padding: 10px;
+        font-size: 15px;
+        border-bottom: 2px solid #ddd;
+        margin-bottom: 10px;
+      }
+
+      .tabs span {
+        cursor: pointer;
+        padding: 5px 10px;
+      }
+
+      .tabs .active {
+        font-weight: bold;
+        color: var(--color-Main);
+        border-bottom: 2px solid var(--color-Main);
+      }
+
+      .img_shopping {
+        display: flex;
+        width: 70%;
+        height: 600px;
+        margin: auto;
+        border-radius: 10px;
+      }
+      .history_list,
+      .order_list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .history_item,
+        .order {
+          width: 70%;
+          margin-top: 20px;
+          padding: 20px 30px;
+          border-radius: 8px;
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          text-align: left;
+          .info_order {
+            display: flex;
+            justify-content: space-between;
+            .status {
+              color: #fff;
+              border-radius: 5px;
+              padding: 5px 20px;
+              font-weight: 500;
+              font-size: 16px;
+            }
+            .status.pending {
+              background-color: #e6e335;
+            }
+
+            .status.processing {
+              background-color: var(--color-Main);
+            }
+
+            .status.shipped {
+              background-color: #74e674;
+            }
+
+            .status.delivered {
+              background-color: #c87459;
+            }
+
+            .status.cancelled {
+              background-color: #dc3545;
+            }
+          }
+          .content_order {
+            margin-left: 30px;
+            .time,
+            .delivery {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              p {
+                color: #7a7a7a;
+              }
+            }
+          }
+          p {
+            margin: 5px 0;
+            font-size: 18px;
+          }
+
+          a {
+            color: #007bff;
+            font-weight: bold;
+            text-decoration: none;
+          }
+
+          .buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+          }
+        }
+      }
+
+      .profile_section {
+        width: 70%;
+        margin: auto;
+        .profile {
+          text-align: center;
+          h2 {
+            font-weight: 500;
+          }
+          p {
+            color: #7a7a7a;
+          }
+          .profile_pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 3px solid var(--color-Main);
+          }
+        }
+        .profile_info {
+          h3 {
+            font-weight: 500;
+          }
+          .info {
+            margin-left: 30px;
+            p {
+              font-weight: 400;
+              color: #7a7a7a;
+            }
+            span {
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.btn {
+  width: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  background: var(--background-color-Main);
+  color: white;
+  padding: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.btn:hover {
+  background: #0056b3;
+}
+.ic {
+  width: 25px;
+}

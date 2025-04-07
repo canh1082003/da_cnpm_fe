@@ -9,7 +9,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import "../Shipper/Shipper.css";
+import "../Shipper/style/Shipper.css";
 import {
   AdjustmentsHorizontalIcon,
   ArrowUpOnSquareIcon,
@@ -27,7 +27,7 @@ const data = [
 
 const Shipper = () => {
   return (
-    <div className="shipper_container style">
+    <div className="shipper_container ">
       <div className="shipper_content">
         <div className="shipper_cover_photo">
           <img

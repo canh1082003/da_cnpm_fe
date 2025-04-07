@@ -1,7 +1,11 @@
 import axios, { type AxiosInstance } from "axios";
 import { baseURL } from "./constant";
 import { toast } from "react-toastify";
-import { LOGIN_URL, LOGOUT_URL, REGISTER_URL } from "../hooks/constant";
+import {
+  LOGIN_URL,
+  LOGOUT_URL,
+  REGISTER_URL,
+} from "../hooks/auth/use/constant";
 import { ApiSuccessResponse } from "../hooks/type";
 import { LoginData, RegisterData } from "../hooks/auth/use/type";
 export class Api {
@@ -37,22 +41,24 @@ export class Api {
             const userInfo = LoginResponse.data.data;
             localStorage.setItem("userInfo", JSON.stringify(userInfo));
 
-            if (userInfo.role === "admin")
-              window.location.href = "/home/admin/";
+            if (userInfo.role === "admin") window.location.href = "/homeAdmin";
             else if (userInfo.role === "user") {
               toast.success("Đăng Nhập Thành Công");
               setTimeout(() => {
                 window.location.href = "/";
               }, 6000);
             } else {
+              toast.success("Đăng Nhập Thành Công");
               setTimeout(() => {
-                window.location.href = "/home/shipper";
+                // window.location.href = "/orderShipper";
+                window.location.href = "/homeStaff";
               }, 6000);
             }
             return response;
           }
           case LOGOUT_URL: {
             localStorage.removeItem("userInfo");
+            window.location.href = "/";
             return response;
           }
 

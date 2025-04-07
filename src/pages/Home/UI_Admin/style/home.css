@@ -1,0 +1,43 @@
+.style {
+  .chart {
+    display: flex;
+    .chart1 {
+      margin-bottom: 50px;
+      canvas {
+        height: 300px;
+        margin: auto;
+      }
+      .name_chart {
+        text-align: center;
+        padding: 10px;
+        font-size: 20px;
+      }
+    }
+  }
+  .ok {
+    margin-top: 10px;
+    display: flex;
+    .chart2 {
+      flex: 1;
+      margin-right: 10px;
+      height: 300px;
+      .name_chart {
+        text-align: center;
+        padding: 10px;
+        font-size: 20px;
+      }
+    }
+    .chart3 {
+      height: 300px;
+      flex: 1;
+      canvas {
+        margin: auto;
+      }
+      .name_chart {
+        text-align: center;
+        padding: 10px;
+        font-size: 20px;
+      }
+    }
+  }
+}
