@@ -4,6 +4,21 @@ import main from "../../../assets/img/ImgUser/photo-1-15766667578391776901975-16
 import img1 from "../../../assets/img/ImgUser/images.jpg";
 import imgVanChuyen from "../../../assets/img/ImgUser/van-chuyen-duong-bo.png";
 const HomeUser = () => {
+  const [orderCode, setOrderCode] = useState("");
+  const [orderData, setOrderData] = useState<Order[]>([]);
+  console.log(orderData);
+  const fecthOrderCodeByOrder = async () => {
+    try {
+      const response = await axios.post(GETORDERCODE_BY_ORDER_URL, {
+        orderCode: orderCode,
+      });
+      const data = response.data.data || [];
+      const dataArray = Array.isArray(data) ? data : [data];
+      setOrderData(dataArray);
+    } catch (error) {
+      console.error("Lỗi khi gọi API theo trạng thái:", error);
+    }
+  };
   return (
     <div className="">
       <div className="home_User">
@@ -73,9 +88,14 @@ const HomeUser = () => {
               <h2>Đơn hàng</h2>
               <input
                 type="text"
+                name="orderCode"
                 placeholder="Nhập mã đơn hàng bạn cần tra cứu"
+                value={orderCode}
+                onChange={(e) => setOrderCode(e.target.value)}
               />
-              <button className="btn">tra cứu</button>
+              <button className="btn" onClick={fecthOrderCodeByOrder}>
+                tra cứu
+              </button>
             </div>
             <hr />
             {/* <div className="bc">
