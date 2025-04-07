@@ -18,10 +18,14 @@ interface Order {
 const HomeUser = () => {
   const [orderCode, setOrderCode] = useState("");
   const [orderData, setOrderData] = useState<Order[]>([]);
-  console.log(orderData.length);
+
+  console.log(orderData);
   const fecthOrderCodeByOrder = async () => {
     try {
-      const response = await axios.get(`${GETORDERCODE_BY_ORDER_URL}`);
+      const response = await axios.post(GETORDERCODE_BY_ORDER_URL, {
+        orderCode: orderCode,
+      });
+
       const data = response.data.data || [];
       const dataArray = Array.isArray(data) ? data : [data];
       setOrderData(dataArray);
@@ -98,6 +102,7 @@ const HomeUser = () => {
               <h2>Đơn hàng</h2>
               <input
                 type="text"
+                name="orderCode"
                 placeholder="Nhập mã đơn hàng bạn cần tra cứu"
                 value={orderCode}
                 onChange={(e) => setOrderCode(e.target.value)}
@@ -105,11 +110,13 @@ const HomeUser = () => {
               <button className="btn" onClick={fecthOrderCodeByOrder}>
                 tra cứu
               </button>
+
             </div>
             <div className="hi">
               <div className="result">
                 <h3>Kết quả tra cứu</h3>
               </div>
+
             </div>
             <hr />
           </div>
