@@ -2,6 +2,7 @@ import "../UI_User/style/homeUser.css";
 import React, { useState } from "react";
 import main from "../../../assets/img/ImgUser/photo-1-15766667578391776901975-1622696128062-16226961283251701998759-1622704158065-1622704164100514724587.jpg";
 import img1 from "../../../assets/img/ImgUser/images.jpg";
+import logoBrand from "../../../assets/img/logoBrand.jpg";
 import imgVanChuyen from "../../../assets/img/ImgUser/van-chuyen-duong-bo.png";
 import axios from "axios";
 import { GETORDERCODE_BY_ORDER_URL } from "../../../hooks/auth/shipper/constant";
@@ -27,28 +28,19 @@ const HomeUser = () => {
     }
   };
   const renderHeader = () => {
-    return (<div className="header">
-      <span className="logo">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 14"
-          fill="currentColor"
-          className="size-4"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M4 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4Zm.75 7a.75.75 0 0 0-.75.75v1.5a.75.75 0 0 0 1.5 0v-1.5A.75.75 0 0 0 4.75 9Zm2.5-1.75a.75.75 0 0 1 1.5 0v4a.75.75 0 0 1-1.5 0v-4Zm4-3.25a.75.75 0 0 0-.75.75v6.5a.75.75 0 0 0 1.5 0v-6.5a.75.75 0 0 0-.75-.75Z"
-            clip-rule="evenodd"
-          />
-        </svg>
-        <span>Group5</span>
-      </span>
-      <nav>
-        <a href="/login" className="btn">
-          Đăng nhập / Đăng kí
-        </a>
-      </nav>
-    </div>)
+    return (
+      <div className="header">
+        <span className="logo">
+          <img src={logoBrand} className="logoBrand" />
+        </span>
+
+        <nav>
+          <a href="/login" className="btn_homeUser">
+            Đăng nhập / Đăng kí
+          </a>
+        </nav>
+      </div>
+    )
   }
   const renderHome = () => {
     return (<div className="home">
@@ -57,7 +49,7 @@ const HomeUser = () => {
           <span>SHIP</span> toàn quốc
         </h3>
         <p>63 Tỉnh Thành</p>
-        <a className="btn">Tra cứu</a>
+        {/* <a className="btn_homeUser">Tra cứu</a> */}
       </div>
     </div>)
   }
@@ -101,7 +93,7 @@ const HomeUser = () => {
             value={orderCode}
             onChange={(e) => setOrderCode(e.target.value)}
           />
-          <button className="btn" onClick={fecthOrderCodeByOrder}>
+          <button className="btn_homeUser" onClick={fecthOrderCodeByOrder}>
             tra cứu
           </button>
         </div>

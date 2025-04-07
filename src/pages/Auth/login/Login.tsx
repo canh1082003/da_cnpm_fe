@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import img from "../../../assets/img/login.png";
-import logo from "../../../assets/img/logo.png";
+import logo from "../../../assets/img/logoBrand.jpg";
 import "../../../pages/Home/style.css";
 import "../login/login.css";
 import { useState } from "react";
@@ -11,6 +11,7 @@ export const Login = () => {
     email: "",
     password: "",
   });
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
