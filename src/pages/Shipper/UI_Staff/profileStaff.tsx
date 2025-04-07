@@ -1,5 +1,7 @@
 import user from "../../../assets/img/ImgShipper/z5776429064738_ff00dce5dcc88328ec55866c571eb3f8.jpg"
+import "../style/proflieStaff.css"
 const ProfileStaff = () => {
+	
 	return (
 		<div className="profile_section">
 			<div className="profile">

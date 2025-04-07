@@ -29,6 +29,7 @@
 				padding: 30px 0;
 				font-weight: 500;
 				gap: 10px;
+				color: #fff;
 				p {
 					color: #fff;
 				}
@@ -58,27 +59,27 @@
 				font-size: 16px;
 				margin-bottom: 20px;
 			}
-			.status_btn.đang-vận-chuyển {
+			.status_btn.pending {
 				background-color: #e6e335;
 				color: #fff;
 			}
 
-			.status_btn.đang-xử-lý {
+			.status_btn.processing {
 				background-color: var(--color-Main);
 				color: #fff;
 			}
 
-			.status_btn.đã-giao {
+			.status_btn.shipped {
 				background-color: #74E674;
 				color: #fff;
 			}
 
-			.status_btn.chờ-giải-quyết {
+			.status_btn.delivered {
 				background-color: #c87459;
 				color: #fff;
 			}
 
-			.status_btn.đã-hủy {
+			.status_btn.cancelled {
 				background-color: #dc3545;
 				color: #fff;
 			}
@@ -99,22 +100,15 @@
 					}
 				}
 			}
-			.note,
 			.update_status,
 			.update_location {
 				margin-left: 20px;
 				margin-top: 20px;
 			}
-			.note {
-				textarea {
-					font-size: 15px;
-					border: 2px solid #ccc;
-					width: 540px;
-					padding: 10px 20px;
-					border-radius: 5px;
-					resize: none;
-				}
+			.update_location{
+				margin-bottom: 20px;
 			}
+			
 			.status_history {
 				margin-top: 20px;
 				.history_content {

@@ -1,3 +1,4 @@
+import "../style/orderStaff.css"
 interface HistoryItem {
 	id: string;
 	address: string;
