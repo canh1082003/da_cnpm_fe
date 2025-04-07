@@ -1,17 +1,4 @@
-import "../style.css";
-import { Doughnut } from "react-chartjs-2";
-import { cot } from "../data";
-import "../UI_Admin/style/Revenue.css";
 
-const Revenue = () => {
-  const dbCot = cot;
-  return (
-    <div>
-      <p className="style">
-        <div className="Revenue">
-          <div className="chart_tron">
-            <Doughnut
-              data={{
                 labels: dbCot.map((data) => data.label),
                 datasets: [
                   {
