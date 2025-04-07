@@ -13,6 +13,7 @@ export const Login = () => {
 	});
 	const [showPassword, setShowPassword] = useState(false);
 
+<<<<<<< Updated upstream
 	const togglePasswordVisibility = () => {
 		setShowPassword((prev) => !prev);
 	};
@@ -130,4 +131,53 @@ export const Login = () => {
 			</div>
 		</div>
 	);
+=======
+    await api.post(LOGIN_URL, {
+      email: formData.email,
+      password: formData.password,
+    });
+  };
+  return (
+    <div className="login style">
+      <div className="img_login">
+        <img src={img} alt="" className="img" />
+      </div>
+      <div className="form_login">
+        <img src={logo} alt="" className="logo" />
+        <form onSubmit={handleSubmit}>
+          <div className="form_input_login">
+            <div className="form_input_login_name">
+              <p>Email</p>
+              <input
+                type="text"
+                placeholder="Enter your email"
+                name="email"
+                className="input"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form_input_login_name">
+              <p>Password</p>
+              <input
+                type="password"
+                placeholder="Enter your Password"
+                name="password"
+                className="input"
+                onChange={handleChange}
+              />
+              <div className="show_password">
+                <input type="checkbox" />
+                <p>Show password</p>
+              </div>
+            </div>
+            <button className="btn_login">Login</button>
+          </div>
+        </form>
+        <Link to="/register">
+          <div className="Already">You do not have an account?</div>
+        </Link>
+      </div>
+    </div>
+  );
+>>>>>>> Stashed changes
 };
