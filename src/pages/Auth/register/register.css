@@ -1,5 +1,12 @@
 .register {
   display: flex;
+  .btn_back{
+    .btnBack{
+      width: 50px;
+      color: var(--color-Main);
+      margin: 20px 0 0 20px;
+    }
+  }
   .img_register {
     width: 50%;
     .img {
