@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { OrderItem } from "./orderItem";
-<<<<<<< Updated upstream
 import { useNavigate } from "react-router-dom";
 import '../style/orderStaff.css'
 import OrderDetails from './OrderDetails';  
-=======
 import "../style/orderStaff.css"
->>>>>>> Stashed changes
+
 
 const OrderStaff = ({ onUpdateOrder }: { onUpdateOrder: (order: OrderItem) => void }) => {
   const [orders, setOrders] = useState<OrderItem[]>([]);

@@ -1,5 +1,5 @@
 import "../../Home/style.css";
-import "../UI_shipper/style/order.css";
+import "../UI_Admin/style/order.css";
 
 const Order = () => {
   return (
