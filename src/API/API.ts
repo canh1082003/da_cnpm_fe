@@ -50,9 +50,8 @@ export class Api {
             } else {
               toast.success("Đăng Nhập Thành Công");
               setTimeout(() => {
-                // window.location.href = "/orderShipper";
                 window.location.href = "/homeStaff";
-              }, 6000);
+              }, 5000);
             }
             return response;
           }

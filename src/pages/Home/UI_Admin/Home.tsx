@@ -34,36 +34,43 @@ interface Data {
 export const Home = () => {
   const {
     fetchDeliveredOrdersByDate,
-    fetchPendingOrdersByDate,
+    fetchProcessingOrdersByDate,
     fetchTotal_AmountByOrder,
     fetchOrderByStaff,
+    fetchPendingOrdersByDate
   } = useFetchOrders();
-  const [dbCot, setDbCot] = useState<Data[]>([]);
-  const [dbHang, setDbHang] = useState<Data[]>([]);
-  const [dbLine, setDbLine] = useState<Data[]>([]);
+  const [dbDelivered, setDbDelivered] = useState<Data[]>([]);
+  const [dbProcessing, setDbProcessing] = useState<Data[]>([]);
+  const [dbPending, setDbPending] = useState<Data[]>([]);
+  const [dbTotal_Amount, setDbTotal_Amount] = useState<Data[]>([]);
   const [dbStaff, setDbStaff] = useState<Data[]>([]);
   useEffect(() => {
-    const getDataLine = async () => {
-      const dataLine = await fetchTotal_AmountByOrder();
-      setDbLine(dataLine);
-    };
     const getData = async () => {
       const data = await fetchDeliveredOrdersByDate();
-      setDbCot(data);
+      setDbDelivered(data);
     };
-    const getDataHang = async () => {
-      const dataHang = await fetchPendingOrdersByDate();
-      setDbHang(dataHang);
+    const getDataProcessing = async () => {
+      const dataProcessing = await fetchProcessingOrdersByDate();
+      setDbProcessing(dataProcessing);
+    };
+    const getDataPending = async () => {
+      const dataPending = await fetchPendingOrdersByDate();
+      setDbPending(dataPending);
+    };
+    const getDataLine = async () => {
+      const dataLine = await fetchTotal_AmountByOrder();
+      setDbTotal_Amount(dataLine);
     };
     const getDataStaff = async () => {
       const dataStaff = await fetchOrderByStaff();
       setDbStaff(dataStaff);
     };
 
-    getDataHang();
+    getDataProcessing();
     getData();
     getDataLine();
     getDataStaff();
+    getDataPending()
   }, []);
 
   return (
@@ -72,11 +79,11 @@ export const Home = () => {
         <div className="chart1">
           <Line
             data={{
-              labels: dbLine.map((data) => data.label),
+              labels: dbTotal_Amount.map((data) => data.label),
               datasets: [
                 {
                   label: "Doanh Thu Theo Ngày",
-                  data: dbLine.map((data) => data.value),
+                  data: dbTotal_Amount.map((data) => data.value),
                   backgroundColor: "rgba(75,192,192,1)",
                   borderWidth: 2,
                 },
@@ -92,18 +99,24 @@ export const Home = () => {
         <div className="chart2">
           <Bar
             data={{
-              labels: dbCot.map((data) => data.label),
+              labels: dbDelivered.map((data) => data.label),
               datasets: [
                 {
                   label: "Thành Công",
-                  data: dbCot.map((data) => data.value),
+                  data: dbDelivered.map((data) => data.value),
                   backgroundColor: "rgba(75, 192, 192, 1)",
                   borderWidth: 1,
                 },
                 {
                   label: "Đang Giao",
-                  data: dbHang.map((data) => data.value),
+                  data: dbProcessing.map((data) => data.value),
                   backgroundColor: "rgb(85, 75, 192)",
+                  borderWidth: 1,
+                },
+                {
+                  label: "Đang Chờ",
+                  data: dbPending.map((data) => data.value),
+                  backgroundColor: "rgb(7, 241, 46)",
                   borderWidth: 1,
                 },
               ],

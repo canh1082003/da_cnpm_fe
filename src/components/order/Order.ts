@@ -52,13 +52,25 @@ export const useFetchOrders = () => {
 
     return Object.entries(grouped).map(([label, value]) => ({ label, value }));
   };
+  const fetchProcessingOrdersByDate = async () => {
+    const response = await axios.get(`${GET_ALLORDER_URL}`);
+    const orders = response.data.data || [];
+
+    const pending = orders.filter((order) => order.status === "processing");
+
+    const grouped = pending.reduce((acc, order) => {
+      const date = formatDate(order.created_at, "yyyy-MM-dd");
+      acc[date] = (acc[date] || 0) + 1;
+      return acc;
+    }, {});
+
+    return Object.entries(grouped).map(([label, value]) => ({ label, value }));
+  };
   const fetchPendingOrdersByDate = async () => {
     const response = await axios.get(`${GET_ALLORDER_URL}`);
     const orders = response.data.data || [];
 
-    const pending = orders.filter(
-      (order) => order.status === "processing" || order.status === "pending"
-    );
+    const pending = orders.filter((order) => order.status === "pending");
 
     const grouped = pending.reduce((acc, order) => {
       const date = formatDate(order.created_at, "yyyy-MM-dd");
@@ -99,6 +111,7 @@ export const useFetchOrders = () => {
   return {
     fetchAllOrders,
     fetchDeliveredOrdersByDate,
+    fetchProcessingOrdersByDate,
     fetchPendingOrdersByDate,
     fetchTotal_AmountByOrder,
     fetchOrderByStaff,

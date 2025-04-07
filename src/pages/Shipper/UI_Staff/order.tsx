@@ -2,20 +2,22 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import shopping from "../../../assets/img/ImgShipper/shopping.jpg";
 import "../style/order.css";
-import { GETALLORDER_BYSTATUS_URL } from "../../../hooks/auth/shipper/constant";
+import { ADDORDER_BY_STAFF_URL, GETALLORDER_BYSTATUS_URL } from "../../../hooks/auth/shipper/constant";
 import { toast } from "react-toastify";
+import { OrderItem } from "../../../hooks/auth/order/type";
 
 export default function OrderManagement() {
-  const [ordersByStatus, setOrdersByStatus] = useState([]);
+  const [ordersByStatus, setOrdersByStatus] = useState<OrderItem[]>([]);
 
   const fetchOrdersByStatus = async () => {
     try {
       const response = await axios.get(GETALLORDER_BYSTATUS_URL);
+      console.log(response)
       const data = response.data.data || [];
-      setOrdersByStatus(data); // Gán mảng vào state
+      setOrdersByStatus(data);
     } catch (error) {
       console.error("Lỗi khi gọi API theo trạng thái:", error);
-      setOrdersByStatus([]); // Nếu có lỗi thì gán mảng rỗng
+      setOrdersByStatus([]);
     }
   };
 
@@ -29,8 +31,8 @@ export default function OrderManagement() {
 
     if (userInfo && userInfo.id && orderId) {
       try {
-        const response = await axios.put(
-          `http://localhost:4000/api/v1/order/addOrderByStaff/${userInfo.id}`,
+        await axios.put(
+          `${ADDORDER_BY_STAFF_URL}/${userInfo.id}`,
           { id: orderId }
         );
 
@@ -86,7 +88,7 @@ export default function OrderManagement() {
               <div className="buttons">
                 <button
                   className="complete-btn btn"
-                  onClick={() => handleFetchOrdersByStaff(order.id)} // Truyền id đơn hàng vào
+                  onClick={() => handleFetchOrdersByStaff(order.id)}
                 >
                   <span>
                     <svg
